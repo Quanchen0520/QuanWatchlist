@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  /* 中英文都好看的系統字體堆疊，免外部字體下載 */
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC",
+    "PingFang TC", "Microsoft JhengHei", Helvetica, Arial, sans-serif;
+  font-size: 16px; /* 內文至少 16px */
+  line-height: 1.6;
+  background-color: #f6f7f9;
+  color: #1a1d24;
+  -webkit-font-smoothing: antialiased;
+}
