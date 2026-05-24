@@ -30,7 +30,7 @@ export function AddSymbolForm({ onAdd }: Props) {
       <select
         value={market}
         onChange={(e) => setMarket(e.target.value as Market)}
-        className="rounded-lg border border-gray-300 bg-white px-3 py-3 text-base text-gray-800 focus:border-gray-500 focus:outline-none sm:w-32"
+        className="rounded-lg border border-gray-300 bg-white px-3 py-3 text-base text-gray-800 focus:border-gray-500 focus:outline-none sm:w-32 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
         aria-label="選擇市場"
       >
         {MARKET_ORDER.map((m) => (
@@ -45,13 +45,13 @@ export function AddSymbolForm({ onAdd }: Props) {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder={MARKET_PLACEHOLDERS[market]}
-        className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-800 placeholder:text-gray-400 focus:border-gray-500 focus:outline-none"
+        className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-base text-gray-800 placeholder:text-gray-400 focus:border-gray-500 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:placeholder:text-gray-500"
         autoComplete="off"
       />
 
       <button
         type="submit"
-        className="rounded-lg bg-gray-900 px-6 py-3 text-base font-medium text-white transition-colors hover:bg-gray-700 active:bg-gray-800"
+        className="rounded-lg bg-gray-900 px-6 py-3 text-base font-medium text-white transition-colors hover:bg-gray-700 active:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-300 dark:active:bg-gray-200"
       >
         加入
       </button>

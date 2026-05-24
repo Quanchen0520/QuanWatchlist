@@ -28,10 +28,12 @@ export function MarketSection({ market, items, quotes, errors, onRemove }: Props
     <section className="mb-8">
       <div className="mb-3 flex items-center gap-2">
         <span className={`h-2.5 w-2.5 rounded-full ${DOT_COLORS[market]}`} />
-        <h2 className="text-lg font-semibold text-gray-800">
+        <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
           {MARKET_LABELS[market]}
         </h2>
-        <span className="text-sm text-gray-400">{items.length}</span>
+        <span className="text-sm text-gray-400 dark:text-gray-500">
+          {items.length}
+        </span>
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">

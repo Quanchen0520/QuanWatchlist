@@ -51,7 +51,7 @@ export function formatTime(ts: number): string {
  * 採台股慣例：紅漲、綠跌、平盤灰。
  */
 export function changeColorClass(change: number): string {
-  if (change > 0) return "text-rose-600";
-  if (change < 0) return "text-emerald-600";
-  return "text-gray-500";
+  if (change > 0) return "text-rose-600 dark:text-rose-500";
+  if (change < 0) return "text-emerald-600 dark:text-emerald-500";
+  return "text-gray-500 dark:text-gray-400";
 }

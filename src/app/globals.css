@@ -1,7 +1,15 @@
 @import "tailwindcss";
 
+/* 改用 class 策略：dark: 變體跟著 <html class="dark"> 切換（而非只看系統設定），
+   才能讓使用者用切換鈕手動覆蓋。 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark; /* 讓原生元件（如下拉選單、捲軸）也跟著深色 */
 }
 
 html {
@@ -18,4 +26,12 @@ body {
   background-color: #f6f7f9;
   color: #1a1d24;
   -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.dark body {
+  background-color: #0b0d12;
+  color: #e5e7eb;
 }

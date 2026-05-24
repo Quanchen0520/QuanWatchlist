@@ -6,6 +6,7 @@ import { MARKET_ORDER } from "@/lib/config";
 import { AddSymbolForm } from "@/components/AddSymbolForm";
 import { MarketSection } from "@/components/MarketSection";
 import { StatusBar } from "@/components/StatusBar";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
   const { items, ready, add, remove } = useWatchlist();
@@ -17,13 +18,16 @@ export default function Home() {
   return (
     <main className="mx-auto min-h-screen max-w-3xl px-4 py-8 sm:px-6 sm:py-10">
       {/* 標題 */}
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-          Quan 看盤
-        </h1>
-        <p className="mt-1 text-base text-gray-500">
-          台股 · 美股 · 加密貨幣，集中一頁即時行情
-        </p>
+      <header className="mb-6 flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl dark:text-gray-100">
+            Quan 看盤
+          </h1>
+          <p className="mt-1 text-base text-gray-500 dark:text-gray-400">
+            台股 · 美股 · 加密貨幣，集中一頁即時行情
+          </p>
+        </div>
+        <ThemeToggle />
       </header>
 
       {/* 新增標的 */}
@@ -43,9 +47,11 @@ export default function Home() {
 
       {/* 空清單提示 */}
       {isEmpty && (
-        <div className="rounded-xl border border-dashed border-gray-300 bg-white px-6 py-16 text-center">
-          <p className="text-lg font-medium text-gray-700">尚無追蹤標的</p>
-          <p className="mt-2 text-base text-gray-500">
+        <div className="rounded-xl border border-dashed border-gray-300 bg-white px-6 py-16 text-center dark:border-gray-700 dark:bg-gray-900">
+          <p className="text-lg font-medium text-gray-700 dark:text-gray-300">
+            尚無追蹤標的
+          </p>
+          <p className="mt-2 text-base text-gray-500 dark:text-gray-400">
             用上方輸入框選擇市場、輸入代號即可加入追蹤。
           </p>
         </div>
@@ -64,10 +70,10 @@ export default function Home() {
           />
         ))}
 
-      <footer className="mt-12 text-center text-sm text-gray-400">
+      <footer className="mt-12 text-center text-sm text-gray-400 dark:text-gray-500">
         漲跌色：
-        <span className="text-rose-600">紅漲</span> /{" "}
-        <span className="text-emerald-600">綠跌</span>
+        <span className="text-rose-600 dark:text-rose-500">紅漲</span> /{" "}
+        <span className="text-emerald-600 dark:text-emerald-500">綠跌</span>
         　·　資料僅供參考，非投資建議
       </footer>
     </main>
